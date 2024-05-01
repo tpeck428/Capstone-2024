@@ -1,0 +1,29 @@
+/* .logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+} */
+
+/* temporary nav css */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  
+}
+
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: #50a3b4;
+  color: white;
+  padding: 5px;
+  font-size: 1em;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #ef77d5;
+}
