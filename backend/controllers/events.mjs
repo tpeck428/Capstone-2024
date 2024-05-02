@@ -26,41 +26,41 @@ router.get('/', async (req, res) => {
 });
 
 //READ Route - Pulling a user by ID using a get route 
-// router.get('/:id', async (req, res) => {
-//     try {
-//         const foundTasks = await Tasks.findById(req.params.id);
-//         res.status(200).json(foundTasks)
-//     } catch (err) {
-//         res.status(404).send(err);
-//     }
-// })
+router.get('/:id', async (req, res) => {
+    try {
+        const foundEvents = await Events.findById(req.params.id);
+        res.status(200).json(foundEvents)
+    } catch (err) {
+        res.status(404).send(err);
+    }
+})
 
 //UPDATE/PUT Route
-// router.put('/:id', async (req, res) => {
-//     try {
-//         const updatedTasks = await Tasks.findByIdAndUpdate(
-//             req.params.id,
-//             req.body,
-//             { new: true},
-//         );
-//             // res.status(200).send(updatedUser)
-//         res.redirect(`/tasks/${req.params.id}`);
-//     } catch (err) {
-//         res.status(400).send(err);
-//     }
-// });
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedEvent = await Events.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true},
+        );
+            res.status(200).send(updatedEvent)
+        // res.redirect(`/events/${req.params.id}`);
+    } catch (err) {
+        res.status(400).send(err);
+    }
+});
 
 
 //DELETE Route
-// router.delete('/:id', async(req, res) => {
-//     try{
-//         const deletedTasks = await Tasks.findByIdAndDelete(req.params.id);
-//         console.log(deletedTasks);
-//         res.status(200).redirect('/tasks');
-//     } catch (err) {
-//         res.status(400).send(err);
-//     }
-// })
+router.delete('/:id', async(req, res) => {
+    try{
+        const deletedEvent = await Events.findByIdAndDelete(req.params.id);
+        // console.log(deletedEvent);
+        res.status(200).redirect('/events');
+    } catch (err) {
+        res.status(400).send(err);
+    }
+})
 
 
 
