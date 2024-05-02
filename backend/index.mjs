@@ -6,6 +6,7 @@ import cors from 'cors'
 
 import db from "./db/connection.mjs"
 
+import userRoutes from './controllers/users.mjs'
 
 
 //creating express application and other variables
@@ -18,6 +19,8 @@ app.use(express.json());
 //cors middleware
 app.use(cors());
 
+//Routes
+app.use("/user", userRoutes);
 
 
 //Get Route to check for working server in the browser
@@ -26,6 +29,10 @@ app.get("/", (req, res) => {
 });
 
 
+// Global error handling -- working
+app.use((err, _req, res, next) => {
+    res.status(500).send("seems like we messed up somewhere.")
+})
 
 
 //activates the server
