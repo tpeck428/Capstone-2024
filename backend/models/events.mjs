@@ -12,7 +12,7 @@ const eventSchema = new mongoose.Schema({
         type: Date,
         required: true,
     },
-    //to make sure the task is assigned to the user creating it
+    // to make sure the task is assigned to the user creating it
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,

@@ -9,6 +9,11 @@ const taskSchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    completed: {
+        type: Boolean,
+        default: false,
+    },
+    // to make sure the task is assigned to the user creating it
     userId: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
