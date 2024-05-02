@@ -18,9 +18,10 @@ function App() {
       <Route path='/tasks' element={<Tasks />} />
       <Route path='/planner' element={<Planner />} />
       <Route path='/breathing' element={<Breathing />} />
+      <Route path='/login' element={<LogIn />} />
+      <Route path ='/newuser' element={<NewUser />} />
       </Routes>
-      <LogIn />
-      <NewUser />
+      
     </>
   )
 }
