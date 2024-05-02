@@ -8,6 +8,7 @@ import db from "./db/connection.mjs"
 
 import userRoutes from './controllers/users.mjs'
 import taskRoutes from './controllers/tasks.mjs'
+import eventRoutes from './controllers/events.mjs'
 
 
 //creating express application and other variables
@@ -23,6 +24,7 @@ app.use(cors());
 //Routes
 app.use("/user", userRoutes);
 app.use("/tasks", taskRoutes);
+app.use("/events", eventRoutes);
 
 
 //Get Route to check for working server in the browser
