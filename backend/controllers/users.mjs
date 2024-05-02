@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
     });
 
 
-//READ/GET Route
+//initial READ/GET Route
 router.get('/', async (req, res) => {
     try {
         const foundUser = await User.find({});
@@ -49,6 +49,31 @@ router.get('/', async (req, res) => {
         res.status(400).send(err);
     }
 });
+
+//READ Route - Pulling a user by ID using a get route (not currently working)
+router.get('/:id', async (req, res) => {
+    try {
+        const foundUsers = await User.findById(req.params.id);
+        res.status(200).json(foundUsers)
+    } catch (err) {
+        res.status(404).send(err);
+    }
+})
+
+//UPDATE/PUT Route (not currently working)
+router.put('/:id', async (req, res) => {
+    try {
+        const updatedUser = await User.findByIdAndUpdate(
+            req.params.id,
+            req.body,
+            { new: true},
+        );
+            // res.status(200).send(updatedUser)
+        res.redirect(`/user/${req.params.id}`);
+    } catch (err) {
+        res.status(400).send(err);
+    }
+})
 
 
 
