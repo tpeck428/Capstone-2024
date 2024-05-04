@@ -1,30 +1,34 @@
-import React, { useState } from 'react';
-import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+// import React, { useState } from 'react';
+// import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+// import { FaLock } from "react-icons/fa";
+// import '../../styles/LoginSignup.css'
 
-const PasswordInput = ({ value, onChange, placeholder }) => {
 
-const [isShowPassword, setIsShowPassword] = useState(false);
-const toggleShowPassword = () => {
-    setIsShowPassword(!isShowPassword);
-};
+// const PasswordInput = ({ value, onChange, placeholder }) => {
 
-  return (
-    <div className='password-input'>
-        <input 
-        className='input-box'
-        value={value}
-        onChange={onChange}
-        type={isShowPassword ? "text" : "password"}
-        placeholder={placeholder || "Password"}
-        />
+// const [isShowPassword, setIsShowPassword] = useState(false);
+// const toggleShowPassword = () => {
+//     setIsShowPassword(!isShowPassword);
+// };
 
-        <FaRegEye 
-        size={15}
-        onClick={() => toggleShowPassword()}
+//   return (
+//     <div className='input-box'>
+//         <FaLock className='icon' />
+//         <input 
+//         value={value}
+//         onChange={onChange}
+//         type={isShowPassword ? "text" : "password"}
+//         placeholder={placeholder || "Password"}
+//         />
+
+//         <FaRegEye 
+//         className='icon'
+//         size={15}
+//         onClick={() => toggleShowPassword()}
         
-        />
-    </div>
-  )
-}
+//         />
+//     </div>
+//   )
+// }
 
-export default PasswordInput;
+// export default PasswordInput;

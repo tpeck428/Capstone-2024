@@ -1,18 +1,20 @@
-/* .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-} */
-
-/* temporary nav css */
 *{
   box-sizing: border-box;
   margin: 0; 
+  padding: 0;
 }
 
+body{
+  background-image: url("./styles/thick-leaves.jpg");
+  background-size: cover;
 
+}
+
+/* temporary nav css */
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #77bfa3;
+  background-color: #4EA685;
   padding: 5px;
   font-size: 1em;
 }
@@ -23,6 +25,70 @@
 }
 
 .nav a:hover {
-  color: #ef77d5;
+  color: #346F59;
 }
+
+/* login and sign up css */
+
+.container {
+  margin: auto;
+  padding: 0;
+  width: 300px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  background-color: rgba(255, 255, 255, 0.7);
+  align-items: center;
+
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: black;
+  font-weight: 700;
+}
+
+.input-box {
+  /* margin-bottom: 20px; */
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.7);
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.input-box .icon {
+  position: relative;
+  transform: translateY(-50%);
+  font-size: 16px;
+  left: 220px;
+  bottom: 45px;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4EA685;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #346F59;
+}
+
 
