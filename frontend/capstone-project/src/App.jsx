@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
+
 import Nav from './components/Nav';
 import Home from './pages/HomePage'
 import Breathing from './pages/Breathing';
@@ -8,6 +9,10 @@ import Tasks from './pages/Tasks';
 import NewUser from './pages/NewUser';
 import LogIn from './pages/LogIn';
 
+import Modal from 'react-modal';
+
+
+Modal.setAppElement('#root');
 
 function App() {
   return (

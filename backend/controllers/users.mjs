@@ -1,9 +1,17 @@
 import express from 'express';
 const router = express.Router();
 import User from '../models/users.mjs';
-import jwt from "jsonwebtoken";
-import bcrypt from 'bcrypt';
+import cors from "cors";
 import db from '../db/connection.mjs';
+
+//Middleware
+router.use(
+    cors({
+        credentials: true,
+        origin: 'http://localhost:5173'
+    })
+)
+
 
 //Seed Route
 router.get("/seed", async (req, res) => {
