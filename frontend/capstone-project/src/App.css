@@ -5,25 +5,24 @@
 /* temporary nav css */
 *{
   box-sizing: border-box;
-  margin: 0;
-  
+  margin: 0; 
 }
 
 
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #50a3b4;
-  color: white;
+  background-color: #77bfa3;
   padding: 5px;
   font-size: 1em;
 }
 
 .nav a {
-  color: white;
+  color: whitesmoke;
   text-decoration: none;
 }
 
 .nav a:hover {
   color: #ef77d5;
 }
+

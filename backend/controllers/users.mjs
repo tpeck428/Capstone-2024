@@ -1,6 +1,8 @@
 import express from 'express';
 const router = express.Router();
 import User from '../models/users.mjs';
+import jwt from "jsonwebtoken";
+import bcrypt from 'bcrypt';
 import db from '../db/connection.mjs';
 
 //Seed Route
@@ -35,6 +37,7 @@ router.post('/', async (req, res) => {
         const createdUser = await User.create(req.body);
         // res.status(200).send(createdUser);
         res.status(200).redirect('/user')
+        
     } catch (err) {
         res.status(400).send(err);
     }
