@@ -8,14 +8,13 @@ const eventSchema = new mongoose.Schema({
     content: {
         type: String,
     },
-    dueDate: {
+    startDate: {
         type: Date,
         required: true,
     },
-    priority: {
-        type: Number,
-        min: 0,
-        max: 5,
+    endDate: {
+        type: Date,
+        required: true,
     },
     // to make sure the task is assigned to the user creating it
     userId: {
