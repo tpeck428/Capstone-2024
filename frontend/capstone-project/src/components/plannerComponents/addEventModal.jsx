@@ -11,6 +11,7 @@ function AddEventModal({ isOpen, onClose, onEventAdded }) {
     const [start, setStart] = useState(new Date());
     const [end, setEnd] = useState(new Date());
 
+    //function for button submission to create new event
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -23,7 +24,7 @@ function AddEventModal({ isOpen, onClose, onEventAdded }) {
         onClose();
     }
 
-
+//form set up and mangement 
     return (
         <Modal isOpen={isOpen} onRequestClose={onClose}>
             <form onSubmit={onSubmit}>

@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 import cors from "cors";
 import bodyParser from "body-parser";
+import jwt from "jsonwebtoken";
 
 import db from "./db/connection.mjs"
 
@@ -24,6 +25,8 @@ app.use(bodyParser.json());
 
 //cors middleware
 app.use(cors());
+
+//jwt authentication
 
 //Routes
 app.use("/user", userRoutes);

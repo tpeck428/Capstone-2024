@@ -13,7 +13,7 @@ export default function Calendar() {
   const [modalOpen, setModalOpen] = useState(false); //state mangement for modal to control calendar events/form
   const calendarRef = useRef(null) //useRef for calendarApi
 
-//new event function
+//new calendar event function
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
     calendarApi.addEvent(event);
