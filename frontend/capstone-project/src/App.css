@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
 *{
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   margin: 0; 
   padding: 0;
@@ -91,4 +95,85 @@ header {
   background-color: #346F59;
 }
 
+
+/*tasks css*/
+
+.App {
+  text-align: center;
+}
+
+h1 {
+  color: #346F59;
+  margin-bottom: 0.5rem;
+  font-size: 1.75rem;
+}
+
+.TaskWrapper {
+  background: #dde7c7;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.TaskForm {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.task-input {
+  outline: none;
+  background: none;
+  border: 1px solid #346F59;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  width: 300px;
+  color: #fff;
+}
+
+.task-input::placeholder {
+  color: #0807074d;
+}
+
+.task-btn {
+  background: #77bfA3;
+  color: #fff;
+  border: none;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+.Task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #346F59;
+  color: #fff;
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.fa-trash {
+  margin-left: 0.75rem;
+}
+
+.incompleted {
+  color: #fff;
+  cursor: pointer;
+}
+
+.completed {
+  color: #c5aeff;
+  text-decoration: line-through;
+  cursor: pointer;
+}
+
+.edit-icon,
+.delete-icon {
+  cursor: pointer;
+}
 
