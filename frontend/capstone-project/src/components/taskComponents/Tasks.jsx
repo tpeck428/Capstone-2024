@@ -1,7 +1,15 @@
 import React from 'react'
+import { FaEdit, FaTrash } from "react-icons/fa";
 
-export default function Tasks() {
+
+export default function Task() {
   return (
-    <div>Tasks</div>
+    <div className='Task'>
+        <p>Go to Class</p>
+        <div>
+            <FaTrash />
+            <FaEdit />
+        </div>
+    </div>
   )
 }
