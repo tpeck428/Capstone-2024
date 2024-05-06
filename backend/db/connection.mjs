@@ -11,7 +11,7 @@ const db = mongoose.connection;
 //connect to mongo
 mongoose.connect(mongoURI);
 mongoose.connection.once('open', () => {
-    // console.log('connected to mongo')
+    console.log('connected to mongo')
 }); //will technically work like this but db cannnot be accessed or used without exporting
 
 

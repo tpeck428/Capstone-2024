@@ -5,6 +5,7 @@ import Modal from "react-modal";
 
 function AddEventModal({ isOpen, onClose, onEventAdded }) {
 
+//statement management for form data
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [start, setStart] = useState(new Date());

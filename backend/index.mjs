@@ -16,8 +16,11 @@ import eventRoutes from './controllers/events.mjs'
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-//allows express to read json?
+//express middleware
 app.use(express.json());
+
+//bodyParser middleware
+app.use(bodyParser.json());
 
 //cors middleware
 app.use(cors());

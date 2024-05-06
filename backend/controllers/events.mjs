@@ -4,7 +4,7 @@ import Events from '../models/events.mjs'
 import db from '../db/connection.mjs';
 
 //CREATE/POST Route
-router.post('/', async (req, res) => {
+router.post('/creat-event', async (req, res) => {
     try {
         const createdEvent = await Events.create(req.body);
         res.status(200).send(createdEvent);
@@ -16,7 +16,7 @@ router.post('/', async (req, res) => {
 
 
 //initial READ/GET Route
-router.get('/', async (req, res) => {
+router.get('/get-events', async (req, res) => {
     try {
         const foundEvents = await Events.find({});
         res.status(200).send(foundEvents);

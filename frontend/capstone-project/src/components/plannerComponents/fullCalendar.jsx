@@ -10,14 +10,17 @@ Modal.setAppElement('#root');
 
 export default function Calendar() {
 
-  const [modalOpen, setModalOpen] = useState(false);
-  const calendarRef = useRef(null)
+  const [modalOpen, setModalOpen] = useState(false); //state mangement for modal to control calendar events/form
+  const calendarRef = useRef(null) //useRef for calendarApi
 
-//function to add event to calendar-- non working, cant read null properties of getApi
+//new event function
   const onEventAdded = (event) => {
     let calendarApi = calendarRef.current.getApi();
     calendarApi.addEvent(event);
   }
+
+//function to connect backend api to front
+  
 
   return (
     <section>
@@ -33,6 +36,7 @@ export default function Calendar() {
             center: 'title',
             end: 'today prev,next'
           }}
+          eventAdd={event => handleEventAdd(event)}
         />
 
         <AddEventModal 
