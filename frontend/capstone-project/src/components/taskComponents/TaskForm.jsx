@@ -9,6 +9,8 @@ const handleSubmit = ev => {
     // console.log(value) / logs to console
     //passes state from form to wrapper
     addTask(value);
+
+    setValue("")
 }
 
   return (

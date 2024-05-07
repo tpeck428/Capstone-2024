@@ -2,10 +2,14 @@ import React from 'react'
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 
-export default function Task() {
+export default function Task({taskProps, toggleComplete}) {
   return (
     <div className='Task'>
-        <p>Go to Class</p>
+        <p 
+        onClick={() => toggleComplete(taskProps.id)} 
+        className={`${taskProps.completed ? 'completed': ""}`}>
+            {taskProps.taskProps}
+            </p>
         <div>
             <FaTrash />
             <FaEdit />
