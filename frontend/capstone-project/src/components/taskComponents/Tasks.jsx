@@ -2,7 +2,7 @@ import React from 'react'
 import { FaEdit, FaTrash } from "react-icons/fa";
 
 
-export default function Task({taskProps, toggleComplete}) {
+export default function Task({taskProps, toggleComplete, deleteTask, editTask}) {
   return (
     <div className='Task'>
         <p 
@@ -11,8 +11,8 @@ export default function Task({taskProps, toggleComplete}) {
             {taskProps.taskProps}
             </p>
         <div>
-            <FaTrash />
-            <FaEdit />
+            <FaEdit onClick={() => editTask(taskProps.id)} />
+            <FaTrash onClick={() => deleteTask(taskProps.id)} />
         </div>
     </div>
   )

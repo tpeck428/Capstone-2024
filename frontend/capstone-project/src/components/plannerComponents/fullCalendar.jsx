@@ -36,7 +36,7 @@ export default function Calendar() {
             center: 'title',
             end: 'today prev,next'
           }}
-          eventAdd={event => handleEventAdd(event)}
+          
         />
 
         <AddEventModal 

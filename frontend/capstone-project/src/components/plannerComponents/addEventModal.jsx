@@ -47,7 +47,7 @@ function AddEventModal({ isOpen, onClose, onEventAdded }) {
                     <Datetime value={end} onChange={date => setEnd(date)} />
                 </div>
 
-                <button onClick={() => isOpen(true)}>Add Event</button>
+                <button>Add Event</button>
             </form>
         </Modal>
     )
