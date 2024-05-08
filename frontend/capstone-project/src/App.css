@@ -19,7 +19,7 @@ body{
 .nav {
   display: flex;
   justify-content: space-around;
-  background-color: #4EA685;
+  background-color: #709255;
   padding: 5px;
   font-size: 1em;
 }
@@ -116,7 +116,9 @@ h1 {
   margin-top: 5rem;
   padding: 2rem;
   border-radius: 5px;
- 
+ margin-left: 10rem;
+ margin-right: 10rem;
+
 }
 
 .TaskForm {
@@ -128,14 +130,15 @@ h1 {
 }
 
 .task-input {
-  outline: none;
-  background: none;
   border: 1px solid #346F59;
   padding: 0.5rem 1rem;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   width: 300px;
   color: #141313;
+  display: block;
+  padding: 10px;
+  border-radius: 5px;
 }
 
 .task-input::placeholder {
@@ -143,12 +146,19 @@ h1 {
 }
 
 .task-btn {
-  background: #77bfA3;
+  /* display: block; */
+  /* width: 100%; */
+  padding: 10px;
+  background-color: #4EA685;
   color: #fff;
   border: none;
-  padding: 0.55rem;
+  border-radius: 4px;
   cursor: pointer;
-  
+  margin-left: 1rem;
+}
+
+.task-btn:hover {
+  background-color: #346F59;
 }
 
 .Task {
@@ -159,12 +169,14 @@ h1 {
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
-  margin-bottom: 1rem;
+  margin-bottom: 7rem;
 }
 
-.fa-trash {
-  margin-left: 0.75rem;
+.icons{
+  cursor: pointer;
+  justify-content: space-evenly;
 }
+
 
 .incompleted {
   color: #fff;
@@ -172,13 +184,59 @@ h1 {
 }
 
 .completed {
-  color: #c5aeff;
+  color: #dde7c7;
   text-decoration: line-through;
   cursor: pointer;
 }
 
-.edit-icon,
-.delete-icon {
-  cursor: pointer;
+
+/*breathing animations*/
+
+.breathing{
+ text-align: center;
+ color: white;
+ margin-top: 4rem;
+  text-shadow: 2px 1px 2px black;
+  font-size: large;
 }
+
+
+
+.anim-circle {
+  color: transparent;
+  position: relative;
+  top: -28%;
+  left: 50%;
+  margin-top: 12rem;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: rgba(98, 149, 94, 0.889);
+  animation: breathe 7s linear infinite;
+}
+
+@keyframes breathe {
+  0% {
+ box-shadow: 0 0 0 15px rgba(98, 149, 94, 0.3), 
+ 0 0 0 30px rgba(98, 149, 94, 0.3), 
+ 0 0 0 45px rgba(98, 149, 94, 0.3), 
+ 0 0 0 60px rgba(98, 149, 94, 0.3), 
+ 0 0 0 75px rgba(98, 149, 94, 0.3);
+  }
+  50% {
+ box-shadow: 0 0 0 25px rgba(98, 149, 94, 0.3), 
+ 0 0 0 50px rgba(98, 149, 94, 0.3), 
+ 0 0 0 75px rgba(98, 149, 94, 0.3), 
+ 0 0 0 100px rgba(98, 149, 94, 0.3), 
+ 0 0 0 125px rgba(98, 149, 94, 0.3);
+  }
+  100% {
+ box-shadow: 0 0 0 15px rgba(98, 149, 94, 0.3), 
+ 0 0 0 30px rgba(98, 149, 94, 0.3), 
+ 0 0 0 45px rgba(98, 149, 94, 0.3), 
+ 0 0 0 60px rgba(98, 149, 94, 0.3), 
+ 0 0 0 75px rgba(98, 149, 94, 0.3);
+  }
+ }
 

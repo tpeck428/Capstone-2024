@@ -10,8 +10,9 @@ export default function Task({taskProps, toggleComplete, deleteTask, editTask}) 
         className={`${taskProps.completed ? 'completed': ""}`}>
             {taskProps.taskProps}
             </p>
-        <div>
+        <div className='icons'>
             <FaEdit onClick={() => editTask(taskProps.id)} />
+            
             <FaTrash onClick={() => deleteTask(taskProps.id)} />
         </div>
     </div>
