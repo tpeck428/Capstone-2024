@@ -26,7 +26,7 @@ export default function LogIn({ onLogin }) {
     //   alert('Please enter both username and password.');
     // }
 
-    axios.get('/')
+    // axios.get('/')
   };
 
   return (

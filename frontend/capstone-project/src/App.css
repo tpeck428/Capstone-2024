@@ -169,7 +169,7 @@ h1 {
   color: #fff;
   padding: 0.75rem 1rem;
   border-radius: 5px;
-  margin-bottom: 7rem;
+  margin-bottom: 1rem;
 }
 
 .icons{
@@ -201,7 +201,6 @@ h1 {
 }
 
 
-
 .anim-circle {
   color: transparent;
   position: relative;
@@ -214,6 +213,7 @@ h1 {
   border-radius: 50%;
   background: rgba(98, 149, 94, 0.889);
   animation: breathe 7s linear infinite;
+  margin-left: 1rem;
 }
 
 @keyframes breathe {
@@ -240,3 +240,29 @@ h1 {
   }
  }
 
+/*HomePage css*/
+
+.home-page{
+text-align: center;
+ color: #f7fbfa;
+ margin-top: 7rem;
+  text-shadow: 0.5px 1px 1px black;
+  font-size: large;
+  background-color: rgba(131, 180, 79, 0.674);
+  color: #f8faf6;
+}
+
+.h1-home{
+  text-align: center;
+ color: white;
+ margin-top: 4rem;
+  text-shadow: 2px 1px 2px black;
+  font-size: 46px;
+  margin-bottom: 1rem;
+}
+
+.p-home{
+  margin-left: 7rem;
+  margin-right: 7rem;
+  font-weight: 700;
+}

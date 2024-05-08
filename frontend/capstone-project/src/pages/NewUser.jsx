@@ -93,8 +93,6 @@ const navigate = useNavigate()
                 <FaRegEye size={15} />
               </span>
             </div>
-{/* 
-            {error && <p className="error">{error}</p>} */}
 
             <button type="submit" className="btn">
               Sign Up
