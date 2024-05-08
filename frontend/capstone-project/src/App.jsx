@@ -8,9 +8,11 @@ import Planner from './pages/Planner';
 import Tasks from './pages/Tasks';
 import NewUser from './pages/NewUser';
 import LogIn from './pages/LogIn';
-
+import axios from 'axios';
 import Modal from 'react-modal';
 
+axios.defaults.baseURL = 'http://localhost:5173'
+axios.defaults.withCredentials = true;
 
 Modal.setAppElement('#root');
 
