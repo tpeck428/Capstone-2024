@@ -29,7 +29,7 @@ app.use(cors());
 //jwt authentication
 
 //Routes
-app.use("/user", userRoutes);
+app.use("/newuser", userRoutes);
 app.use("/tasks", taskRoutes);
 app.use("/events", eventRoutes);
 

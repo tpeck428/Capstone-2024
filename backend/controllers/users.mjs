@@ -8,12 +8,12 @@ import db from '../db/connection.mjs';
 router.use(
     cors({
         credentials: true,
-        origin: 'http://localhost:5173'
+        origin: 'https://localhost:5173'
     })
 )
 
 
-//Seed Route
+//Seed Route - may not need
 router.get("/seed", async (req, res) => {
     console.log('in seed');
     try{
@@ -32,8 +32,8 @@ router.get("/seed", async (req, res) => {
                 },
 
         ])
-        // res.status(200).res.send(req.body)
-        res.status(200).redirect('/user')
+        res.status(200).res.send(req.body)
+        // res.status(200).redirect('/user')
     } catch (err) {
         res.status(400).send(err)
     }
@@ -41,11 +41,45 @@ router.get("/seed", async (req, res) => {
 
 //CREATE/POST Route
 router.post('/', async (req, res) => {
+    console.log('received post request for new user')
     try {
-        const createdUser = await User.create(req.body);
-        // res.status(200).send(createdUser);
-        res.status(200).redirect('/user')
+        const {fullName, username, email, password} = req.body
         
+        //check if name was entered
+        if(!fullName) {
+            return res.json({
+                error: 'Name is required'
+            })
+        };
+        //check if name was entered
+        if(!username) {
+            return res.json({
+                error: 'Username is required'
+            })
+        };
+
+        //check if password is valid
+        if (!password || password.length < 6){
+            return res.json({
+                error: "Password is requried and should be at least 6 characters long"
+            })
+        }
+
+        //check email validation
+        const exist = await User.findOne({email});
+        if(exist) {
+            return res.json({
+                error: 'Email is already in use'
+            })
+        }
+
+        //replacing seed route to create user in database
+        const user = await User.create({
+            fullName, username, email, password
+        })
+        return res.status(200).res.send(user)
+        
+
     } catch (err) {
         res.status(400).send(err);
     }
@@ -81,7 +115,7 @@ router.put('/:id', async (req, res) => {
             { new: true},
         );
             // res.status(200).send(updatedUser)
-        res.redirect(`/user/${req.params.id}`);
+        res.redirect(`/newuser/${req.params.id}`);
     } catch (err) {
         res.status(400).send(err);
     }
@@ -93,7 +127,7 @@ router.delete('/:id', async(req, res) => {
     try{
         const deletedUsers = await User.findByIdAndDelete(req.params.id);
         console.log(deletedUsers);
-        res.status(200).redirect('/user');
+        res.status(200).json(deletedUsers);
     } catch (err) {
         res.status(400).send(err);
     }

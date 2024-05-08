@@ -10,6 +10,7 @@ import NewUser from './pages/NewUser';
 import LogIn from './pages/LogIn';
 import axios from 'axios';
 import Modal from 'react-modal';
+import { Toaster } from 'react-hot-toast'
 
 axios.defaults.baseURL = 'http://localhost:5173'
 axios.defaults.withCredentials = true;
@@ -20,6 +21,10 @@ function App() {
   return (
     <>
       <Nav />
+      <Toaster 
+      position='bottom-right'
+      toastOptions={{duration: 2000}}
+      />
       <Routes>
       <Route path='/' element={<Home />} />
       <Route path='/tasks' element={<Tasks />} />

@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { FaRegEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 export default function SignUp() {
+
+const navigate = useNavigate()
+
   // State management for sign up requirements
   const [data, setData] = useState({
     fullName: '',
@@ -10,7 +16,7 @@ export default function SignUp() {
     email: '',
     password: '',
   })
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
 
   // State management for show password toggle
   const [isShowPassword, setIsShowPassword] = useState(false);
@@ -23,20 +29,23 @@ export default function SignUp() {
     e.preventDefault();
     console.log(e);
 
-    // Error handling for incorrect input - needs updates
-  //   if (!fullName) {
-  //     setError("Please enter your full name");
-  //     return;
+    // Error handling for incorrect input and axios post request
+  //   const {fullName, username, email, password} = data
+  //   try {
+  //     const {data} = await axios.post('/newuser', {
+  //       fullName, username, email, password
+  //     })
+
+  //     if(data.error) {
+  //       toast.error(data.error)
+  //     } else {
+  //       setData({})
+  //       toast.success('Registration Successful. Welcome!')
+  //       navigate('/login')
+  //     }
+  //   } catch (error) {
+  //     console.log(error)
   //   }
-  //   if (!validateEmail(email)) {
-  //     setError("Please enter valid email address");
-  //     return;
-  //   }
-  //   if (!password) {
-  //     setError("Please enter your password");
-  //     return;
-  //   }
-  //   setError('');
   };
 
   
@@ -84,8 +93,8 @@ export default function SignUp() {
                 <FaRegEye size={15} />
               </span>
             </div>
-
-            {error && <p className="error">{error}</p>}
+{/* 
+            {error && <p className="error">{error}</p>} */}
 
             <button type="submit" className="btn">
               Sign Up
